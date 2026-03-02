@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Top-level temp files
+api.bg.log
+ui.bg.log
+run-smoke.ps1
+
+# Node / Angular
+**/node_modules/
+**/dist/
+**/.angular/
+**/coverage/
+
+# .NET
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+
+# Optional local DB artifacts
+**/*.db-shm
+**/*.db-wal

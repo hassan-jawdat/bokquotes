@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background: #f6f8fb;
+}
+
+body.theme-dark {
+  background: #0f1115;
+  color: #e6e6e6;
+}
+
+body.theme-dark .card {
+  background: #151923;
+  color: #e6e6e6;
+  border-color: #2c3344;
+}
+
+body.theme-dark .table {
+  color: #e6e6e6;
+}
+
+body.theme-dark .table > :not(caption) > * > * {
+  background-color: transparent;
+  color: inherit;
+  border-color: #2c3344;
+}
+
+body.theme-dark .form-control,
+body.theme-dark .form-select,
+body.theme-dark textarea {
+  background: #0f1115;
+  color: #e6e6e6;
+  border-color: #2c3344;
+}
+
+body.theme-dark .form-control:focus,
+body.theme-dark .form-select:focus {
+  background: #0f1115;
+  color: #e6e6e6;
+}
+
+body.theme-dark .navbar {
+  background: #0b0d12 !important;
+}

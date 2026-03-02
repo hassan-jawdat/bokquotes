@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: bokquotes-api
+    runtime: dotnet
+    rootDir: backend/BookQuotes.Api
+    buildCommand: dotnet restore && dotnet publish -c Release -o out
+    startCommand: dotnet out/BookQuotes.Api.dll --urls http://0.0.0.0:$PORT
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production

@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary-subtle">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" routerLink="/books">BookQuotes</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      @if (auth.isLoggedIn()) {
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/books" routerLinkActive="active">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/quotes" routerLinkActive="active">Quotes</a>
+          </li>
+        </ul>
+      } @else {
+        <div class="me-auto"></div>
+      }
+
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-outline-light btn-sm" type="button" (click)="toggleDarkMode()">
+          <i class="fa-solid" [ngClass]="darkMode() ? 'fa-sun' : 'fa-moon'"></i>
+        </button>
+
+        @if (!auth.isLoggedIn()) {
+          <a class="btn btn-outline-light btn-sm" routerLink="/login">Login</a>
+          <a class="btn btn-warning btn-sm" routerLink="/register">Register</a>
+        } @else {
+          <span class="text-light small me-1">{{ auth.username() }}</span>
+          <button class="btn btn-outline-danger btn-sm" type="button" (click)="logout()">Logout</button>
+        }
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <router-outlet />
+</main>
