@@ -85,12 +85,8 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseCors("dev");
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
