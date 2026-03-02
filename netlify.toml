@@ -1,6 +1,6 @@
 [build]
   base = "frontend/bookquotes-ui"
-  command = "npm run build"
+  command = "npm run build && cp dist/bookquotes-ui/browser/index.csr.html dist/bookquotes-ui/browser/index.html"
   publish = "dist/bookquotes-ui/browser"
 
 [build.environment]
