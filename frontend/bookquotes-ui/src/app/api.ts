@@ -1,1 +1,1 @@
-export const API_BASE = 'http://localhost:5292/api';
+export const API_BASE = 'https://bokquotes.onrender.com/api';
